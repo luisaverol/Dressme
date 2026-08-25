@@ -1,16 +1,11 @@
-# DressMe V1
+# DressMe V3
 
-Prima demo Flutter dell'app DressMe: armadio virtuale, outfit del giorno, alternative, planner e profilo Premium.
+Versione pensata per essere caricata su GitHub direttamente da smartphone.
 
-## Avvio
-1. Installa Flutter e Android Studio.
-2. Apri questa cartella in Android Studio.
-3. Nel terminale esegui `flutter pub get`.
-4. Collega un telefono Android o avvia un emulatore.
-5. Esegui `flutter run`.
+Nella root del repository vanno caricati solo questi 4 file:
+- main.dart
+- pubspec.yaml
+- codemagic.yaml
+- README.md
 
-## APK
-Per creare l'APK: `flutter build apk --release`.
-Il file sarà in `build/app/outputs/flutter-apk/app-release.apk`.
-
-Nota: la V1 usa dati demo. Fotocamera, meteo reale, AI, login, database e pagamenti sono predisposti come prossime integrazioni.
+Durante la build Codemagic crea automaticamente la cartella Android con `flutter create`.

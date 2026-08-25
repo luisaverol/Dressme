@@ -1,16 +1,17 @@
 workflows:
   android-debug:
-    name: DressMe Android Demo APK
-    max_build_duration: 60
-    instance_type: linux_x2
+    name: DressMe Android APK
     environment:
       flutter: stable
     scripts:
-      - name: Set up local.properties
-        script: echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
-      - name: Get Flutter packages
+      - name: Create Android project
+        script: |
+          mkdir -p lib
+          cp main.dart lib/main.dart
+          flutter create --platforms=android --project-name dressme .
+      - name: Get packages
         script: flutter pub get
-      - name: Build Android debug APK
+      - name: Build APK
         script: flutter build apk --debug
     artifacts:
-      - build/app/outputs/flutter-apk/*.apk
+      - build/app/outputs/flutter-apk/app-debug.apk
